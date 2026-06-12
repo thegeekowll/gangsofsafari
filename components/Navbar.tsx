@@ -32,15 +32,12 @@ export default function Navbar() {
     setMobileOpen(false)
   }, [pathname])
 
-  const isHome = pathname === '/'
-  const transparent = isHome && !scrolled
-
   return (
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          transparent ? 'bg-transparent' : 'bg-white shadow-md'
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white',
+          scrolled ? 'shadow-md' : 'shadow-sm'
         )}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,20 +48,10 @@ export default function Navbar() {
                 <Car className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col leading-none">
-                <span
-                  className={cn(
-                    'font-display font-bold text-lg leading-tight transition-colors',
-                    transparent ? 'text-white' : 'text-safari-600'
-                  )}
-                >
+                <span className="font-display font-bold text-lg leading-tight text-safari-600">
                   Gangs of Safari
                 </span>
-                <span
-                  className={cn(
-                    'text-xs font-medium transition-colors hidden sm:block',
-                    transparent ? 'text-orange-200' : 'text-stone-500'
-                  )}
-                >
+                <span className="text-xs font-medium text-stone-500 hidden sm:block">
                   Adventure on four wheels
                 </span>
               </div>
@@ -79,11 +66,7 @@ export default function Navbar() {
                   className={cn(
                     'px-3 py-2 rounded-md text-sm font-medium transition-colors',
                     pathname === link.href
-                      ? transparent
-                        ? 'text-white bg-white/20'
-                        : 'text-safari-600 bg-safari-50'
-                      : transparent
-                      ? 'text-white/90 hover:text-white hover:bg-white/10'
+                      ? 'text-safari-600 bg-safari-50'
                       : 'text-stone-600 hover:text-safari-600 hover:bg-safari-50'
                   )}
                 >
@@ -104,12 +87,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => setMobileOpen((v) => !v)}
-                className={cn(
-                  'lg:hidden p-2 rounded-md transition-colors',
-                  transparent
-                    ? 'text-white hover:bg-white/10'
-                    : 'text-stone-600 hover:bg-stone-100'
-                )}
+                className="lg:hidden p-2 rounded-md text-stone-600 hover:bg-stone-100 transition-colors"
                 aria-label="Toggle menu"
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
