@@ -1,12 +1,15 @@
-import { redirect } from 'next/navigation'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import AdminSidebar from '@/components/admin/AdminSidebar'
 
+// Auth redirect is handled by middleware.ts for all routes except /admin/login
+// This layout conditionally shows the sidebar only when a session exists
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession(authOptions)
+
   if (!session) {
-    redirect('/admin/login')
+    // No session = this is the login page (middleware already blocked everything else)
+    return <>{children}</>
   }
 
   return (
