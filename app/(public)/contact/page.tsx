@@ -56,7 +56,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                   </div>
                   <div>
                     <p className="font-semibold text-stone-800 text-sm">Address</p>
-                    <p className="text-stone-500 text-sm mt-0.5">Indiranagar, Bangalore<br />Karnataka 560038, India</p>
+                    <p className="text-stone-500 text-sm mt-0.5">Pune, Maharashtra<br />India</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
