@@ -9,29 +9,14 @@ export const metadata: Metadata = {
     "The story behind Gangs of Safari — India's premier community for Tata Safari owners.",
 }
 
-const team = [
-  {
-    name: 'Rohit Sharma',
-    role: 'Founder & Chief Explorer',
-    bio: 'Rohit started GoS after completing a solo 15,000 km circuit of India in his Tata Safari. He believed every Safari owner deserved a community that matched their adventurous spirit.',
-    avatar: 'RS',
-    tours: '37 tours led',
-  },
-  {
-    name: 'Priya Menon',
-    role: 'Head of Route Planning',
-    bio: "With a background in geography and a Safari odometer that reads over 150,000 km, Priya knows India's roads better than most GPS systems. She curates every route we drive.",
-    avatar: 'PM',
-    tours: '29 routes designed',
-  },
-  {
-    name: 'Vikram Nair',
-    role: 'Community & Safety Lead',
-    bio: "Vikram is a certified first responder and experienced convoy leader. He's the reason every GoS trip ends with smiles and no breakdowns — or at least, recoveries from every breakdown.",
-    avatar: 'VN',
-    tours: '41 convoys led',
-  },
-]
+const founder = {
+  name: 'Anil Dhyani',
+  role: 'Founder & Chief Explorer',
+  location: 'Pune, Maharashtra, India',
+  bio: 'Anil Dhyani is the man behind Gangs of Safari. A passionate Tata Safari owner and road tripper based in Pune, Anil started this community after realising there was no dedicated space for Safari owners to plan, connect, and explore together. From the Sahyadris to the Himalayas, he has driven some of India\'s most challenging and beautiful roads — and he built GoS so every Safari owner could do the same.',
+  avatar: 'AD',
+  stat: 'Founder & driving force of GoS',
+}
 
 const values = [
   {
@@ -98,10 +83,11 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-stone-600 leading-relaxed">
                 <p>
-                  It was October 2021. Rohit Sharma had just taken delivery of his new Tata Safari
-                  and immediately started planning a trip to Coorg. He posted in a general car
-                  enthusiast group asking if anyone else wanted to join. Seven Safari owners raised
-                  their hands.
+                  It was October 2021. Anil Dhyani, a Tata Safari owner from Pune, had just
+                  returned from a solo drive through the Sahyadris and knew he didn&apos;t want to
+                  do the next one alone. He posted in a general car enthusiast group asking if
+                  anyone else wanted to join a convoy to Coorg. Seven Safari owners raised their
+                  hands.
                 </p>
                 <p>
                   The three-day convoy to Coorg — winding through the Western Ghats, camping by
@@ -158,34 +144,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Founder */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-safari-500 font-semibold text-sm uppercase tracking-wider mb-3">
-              The Core Gang
+              The Man Behind the Wheel
             </p>
-            <h2 className="font-display font-black text-4xl text-stone-900">Meet the Team</h2>
+            <h2 className="font-display font-black text-4xl text-stone-900">Meet the Founder</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="bg-white border border-stone-200 rounded-2xl p-8 text-center hover:border-safari-300 hover:shadow-lg transition-all"
-              >
-                <div className="w-20 h-20 bg-safari-500 rounded-full flex items-center justify-center text-white font-display font-black text-2xl mx-auto mb-5">
-                  {member.avatar}
-                </div>
-                <h3 className="font-display font-bold text-stone-900 text-xl mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-safari-600 text-sm font-medium mb-4">{member.role}</p>
-                <p className="text-stone-500 text-sm leading-relaxed mb-4">{member.bio}</p>
-                <span className="inline-block bg-stone-100 text-stone-600 text-xs font-semibold px-3 py-1 rounded-full">
-                  {member.tours}
-                </span>
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white border border-stone-200 rounded-2xl p-10 text-center hover:border-safari-300 hover:shadow-lg transition-all">
+              <div className="w-24 h-24 bg-safari-500 rounded-full flex items-center justify-center text-white font-display font-black text-3xl mx-auto mb-6">
+                {founder.avatar}
               </div>
-            ))}
+              <h3 className="font-display font-bold text-stone-900 text-2xl mb-1">
+                {founder.name}
+              </h3>
+              <p className="text-safari-600 text-sm font-semibold mb-1">{founder.role}</p>
+              <p className="text-stone-400 text-sm mb-6">{founder.location}</p>
+              <p className="text-stone-500 text-base leading-relaxed mb-6">{founder.bio}</p>
+              <span className="inline-block bg-safari-50 text-safari-700 text-xs font-semibold px-4 py-1.5 rounded-full border border-safari-200">
+                {founder.stat}
+              </span>
+            </div>
           </div>
         </div>
       </section>
